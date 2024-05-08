@@ -5,6 +5,7 @@ WORKDIR /app
 RUN python3 -m venv venv
 ENV VIRTUAL_ENV=/app/venv
 ENV PATH="$VIRTUAL_ENV/bin:$PATH"
+RUN source $VIRTUAL_ENV/bin/activate
 
 COPY requirements.txt .
 RUN pip install -r requirements.txt
